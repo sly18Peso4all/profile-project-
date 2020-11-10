@@ -1,21 +1,23 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import {Button, Card} from "react-bootstrap";
+import {Button, Card,} from "react-bootstrap";
 
 
 export default function Profile(props) {
   return (
     <div>
 
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        <Card style={{ width: '18rem', margin: '2px'}}>
+            <Card.Img variant="top" src="" />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{props.profileValue.firstName} {props.profileValue.lastName}</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    {props.profileValue.profileDescription}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <a href={props.profileValue.email} target="_blank" className="btn btn-primary m-2">Send Email</a>
+                <br />
+                <a href="#" target="_blank" className="btn btn-primary m-2">LinkedIn</a>
+                <a href="#" target="_blank" className="btn btn-primary m-2">GitHub</a>
             </Card.Body>
         </Card>
 

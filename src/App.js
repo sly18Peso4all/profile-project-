@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css";
+import Profile from "./Profile";
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 let contentful = require('contentful')
@@ -12,17 +13,19 @@ let client = contentful.createClient({
 
 export default function App() {
 
-    client.getEntries()
-        .then(function (entries) {
-            // log the title for all the entries that have it
-            entries.items.forEach(function (entry) {
+    let [users, setUsers] = useState([])
 
-                    console.log(entry)
-            })
-        })
-  return (
+    useEffect(async ()=> {
+        const response = await client.getEntries()
+        setUsers(response.items)
+    console.log(response.items)
+    },[])
+
+
+
+    return (
       <div className="App">
-
+          {users.map(user => <Profile profileValue={user.fields} />)}
       </div>
     
   );
