@@ -14,7 +14,7 @@ export default function Profile(props) {
                 <Card.Text>
                     {props.profileValue.profileDescription}
                 </Card.Text>
-                <a href={props.profileValue.email} target="_blank" className="btn btn-primary m-2">Send Email</a>
+                <a href={`mailto:${props.profileValue.email}?subject=Request a new employee`} target="_blank" className="btn btn-primary m-2">Send Email</a>
                 <br />
                 <a href="#" target="_blank" className="btn btn-primary m-2">LinkedIn</a>
                 <a href="#" target="_blank" className="btn btn-primary m-2">GitHub</a>

@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import Profile from "./Profile";
+import GridContainer from "./GridContainer";
+import Profile from './Profile';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 let contentful = require('contentful')
@@ -25,8 +26,10 @@ export default function App() {
 
     return (
       <div className="App">
-          {users.map(user => <Profile profileValue={user.fields} />)}
-      </div>
+
+              {users.map(user => <Profile profileValue={user.fields} />)}
+
+          </div>
     
   );
 }
