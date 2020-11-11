@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import GridContainer from "./GridContainer";
-import Profile from './Profile';
+import {CardDeck} from "react-bootstrap";
+import Profile from './components/Profile';
+import Menu from './components/Menu'
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 let contentful = require('contentful')
@@ -26,8 +27,8 @@ export default function App() {
 
     return (
       <div className="App">
-
-              {users.map(user => <Profile profileValue={user.fields} />)}
+<Menu />
+          <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
 
           </div>
     
