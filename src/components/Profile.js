@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
-import {Button, Card,} from "react-bootstrap";
+import '../App.css';
+import { Card} from "react-bootstrap";
 
 
 export default function Profile(props) {
   return (
-    <div>
-
+      <div>
         <Card style={{ width: '18rem', margin: '2px'}}>
             <Card.Img variant="top" src="" />
             <Card.Body>
@@ -20,8 +19,6 @@ export default function Profile(props) {
                 <a href="#" target="_blank" className="btn btn-primary m-2">GitHub</a>
             </Card.Body>
         </Card>
-
-
     </div>
   );
 }
