@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import {CardDeck} from "react-bootstrap";
+import {CardDeck, Nav} from "react-bootstrap";
 import Profile from './components/Profile';
 import Menu from './components/Menu'
 import  NavigationBar from './components/NavigationBar'
@@ -28,9 +28,37 @@ export default function App() {
 
     return (
       <div className="App">
-          <NavigationBar />
+
+          <Router>
+              <Nav>
+              <Nav.Item>
+                  <Nav.Link exact href="/">Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link eventKey="/profile">HTML</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link eventKey="link-2">Link</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link eventKey="disabled" disabled>
+                      Disabled
+                  </Nav.Link>
+              </Nav.Item>
+          </Nav>
+              <Switch>
+                  <Route exact path="/">
+                      <App />
+                  </Route>
+                  <Route path="/profile/:id">
+                      <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
+                  </Route>
+              </Switch>
+          </Router>
+
+
 <Menu />
-          <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
+
 
           </div>
     
