@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import {CardDeck} from "react-bootstrap";
 import Profile from './components/Profile';
 import Menu from './components/Menu'
+import  NavigationBar from './components/NavigationBar'
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 let contentful = require('contentful')
@@ -27,6 +28,7 @@ export default function App() {
 
     return (
       <div className="App">
+          <NavigationBar />
 <Menu />
           <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
 
