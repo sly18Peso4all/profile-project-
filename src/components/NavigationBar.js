@@ -1,33 +1,32 @@
 import React from 'react';
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
  export default function NavigationBar ()  {
     return (
-    <div> 
+    
+    <div>        
     <Nav
-       activeKey="/home"
+       activeKey="/"
        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
        >
        <Nav.Item>
-           <Nav.Link href="/home">CV World</Nav.Link>
+          <Link to="/">CV World</Link>
        </Nav.Item>
        <Nav.Item>
-           <Nav.Link eventKey="link-1">Link</Nav.Link>
+          <Link to="/html">HTML</Link>
+           
        </Nav.Item>
        <Nav.Item>
-           <Nav.Link eventKey="link-2">Link</Nav.Link>
+       <Link to="/css">CSS</Link>
        </Nav.Item>
        <Nav.Item>
-           <Nav.Link eventKey="disabled" disabled>
-           Disabled
-           </Nav.Link>
+          <Link to="/JavaScript">JavaScript</Link>
        </Nav.Item>
    </Nav>
+   </div>
 
-</div> 
     )
  }
       
-
- 

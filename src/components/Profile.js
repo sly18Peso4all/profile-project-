@@ -16,7 +16,8 @@ export default function Profile(props) {
                     <Card.Text>
                         {props.profileValue.profileDescription}
                     </Card.Text>
-                    <Badge className="m-2" variant="secondary">skillz</Badge>
+                    <Badge className="m-2" variant="primary">skillz</Badge>
+                    {props?.profileValue?.skills_?.map(skill => <Badge>{skill}</Badge>)}
                     <br/>
                     <a href={`mailto:${props.profileValue.email}?subject=Request a new employee`} target="_blank"
                        className="btn btn-primary mb-4">Send Email</a>
@@ -28,3 +29,4 @@ export default function Profile(props) {
         </div>
     );
 }
+
