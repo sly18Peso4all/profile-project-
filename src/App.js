@@ -30,8 +30,16 @@ export default function App() {
       <div className="App">
           <NavigationBar />
 <Menu />
-          <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
-
+          
+          <Switch>
+            <Route exact path="/">
+                <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
+            </Route>
+            <Route path="/:skill">
+                <CardDeck>{users.map(user => <Profile profileValue={user.fields} />)}</CardDeck>
+            </Route>
+            
+       </Switch>
           </div>
     
   );
