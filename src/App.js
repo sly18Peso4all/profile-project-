@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import {CardDeck, Nav} from "react-bootstrap";
-import Profile from './components/Profile';
+import Profiles from './components/Profiles';
 import Menu from './components/Menu';
-import  FilteredProfile from './components/FilteredProfile';
+import  FilteredProfiles from './components/FilteredProfiles';
 import {BrowserRouter as Router, Route, Link, useParams } from 'react-router-dom';
 
 let contentful = require('contentful')
@@ -29,7 +29,7 @@ export default function App() {
 
     return (
         <>
-        {users.map((r)=>
+
       <div className="App">
           <Menu />
           <Router>
@@ -41,36 +41,33 @@ export default function App() {
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link>
-                  <Link to={`/profile/${r.fields.skills_.sort(function(a, b){return a - b})[2]}`}>HTML</Link>
+                  <Link to="/profile/Html">HTML</Link>
                   </Nav.Link>
               </Nav.Item>
                   <Nav.Item>
                   <Nav.Link>
-                      <Link to={`/profile/${r.fields.skills_.sort(function(a, b){return a - b})[0]}`}>CSS</Link>
+                      <Link to="/profile/CSS">CSS</Link>
                   </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                   <Nav.Link>
-                      <Link to={`/profile/${r.fields.skills_.sort(function(a, b){return a - b})[1]}`}>JavaScript</Link>
+                      <Link to="/profile/Javascript">JavaScript</Link>
                   </Nav.Link>
               </Nav.Item>
           </Nav>
                   <Route exact path="/">
                       <CardDeck>
-                          <Profile data={users}/>
+                          <Profiles data={users}/>
                       </CardDeck>
                   </Route>
                   <Route path="/profile/:skill">
                       <CardDeck>
-                          <FilteredProfile data={users}/>
+                          <FilteredProfiles data={users}/>
                       </CardDeck>
-
                   </Route>
           </Router>
 
-
           </div>
-        )}
     </>
   );
 }

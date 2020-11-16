@@ -1,8 +1,9 @@
 import React from 'react';
 import '../App.css';
 import { Card, Badge } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
-export default function Profile(props) {
+export default function Profiles(props) {
     return (
             <>
                 {props.data.map((userIndex)=>(
@@ -14,7 +15,7 @@ export default function Profile(props) {
                             <Card.Text>
                                 {userIndex.fields.profileDescription}
                             </Card.Text>
-                            {userIndex.fields.skills_.map((r) => (<Badge className="m-2" variant="secondary">{r}</Badge>))}
+                            {userIndex.fields.skills_.map((r) => (<Badge className="m-2" variant="secondary"><Link className="text-white" >{r}</Link></Badge>))}
                             <br/>
                             <a href={`mailto:${userIndex.fields.email}?subject=Request a new employee`} target="_blank"
                                className="btn btn-primary mb-4">Send Email</a>
