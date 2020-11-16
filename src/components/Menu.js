@@ -1,11 +1,18 @@
 import React from 'react';
-import {Nav} from 'react-bootstrap'
+import {Jumbotron, Container } from 'react-bootstrap'
 
 export default function Menu(){
 
     return (
         <div>
-            <h1>Navigation</h1>
+            <Jumbotron fluid>
+                <Container>
+                    <h1>Find Your Expert</h1>
+                    <p>
+                        Pick your expert based on their skills level!
+                    </p>
+                </Container>
+            </Jumbotron>
         </div>
 
     )

@@ -34,27 +34,40 @@ export default function App() {
           <Menu />
           <Router>
               <Nav>
-              <Nav.Item>
+
                   <Nav.Link>
-                      <Link to="/">Home</Link>
+                      <Link className="btn-sm btn-secondary" to="/">All Profiles</Link>
                   </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
+              <Nav.Link>
+                  <Link className="btn-sm btn-secondary" to="/profile/Html">HTML</Link>
+              </Nav.Link>
                   <Nav.Link>
-                  <Link to="/profile/Html">HTML</Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/CSS">CSS</Link>
                   </Nav.Link>
-              </Nav.Item>
-                  <Nav.Item>
+                    <Nav.Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/Javascript">JavaScript</Link>
+                    </Nav.Link>
                   <Nav.Link>
-                      <Link to="/profile/CSS">CSS</Link>
-                  </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
+                      <Link className="btn-sm btn-secondary" to="/profile/React">React</Link>
+                    </Nav.Link>
                   <Nav.Link>
-                      <Link to="/profile/Javascript">JavaScript</Link>
-                  </Nav.Link>
-              </Nav.Item>
-          </Nav>
+                      <Link className="btn-sm btn-secondary" to="/profile/GitHub">GitHub</Link>
+                    </Nav.Link>
+                  <Nav.Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/wordpress">Wordpress</Link>
+                    </Nav.Link>
+                  <Nav.Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/php">PHP</Link>
+                    </Nav.Link>
+                  <Nav.Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/SQL">SQL</Link>
+                    </Nav.Link>
+                  <Nav.Link>
+                      <Link className="btn-sm btn-secondary" to="/profile/Python">Python</Link>
+                    </Nav.Link>
+                </Nav>
+
+
                   <Route exact path="/">
                       <CardDeck>
                           <Profiles data={users}/>
@@ -68,6 +81,7 @@ export default function App() {
           </Router>
 
           </div>
+
     </>
   );
 }

@@ -9,7 +9,7 @@ export default function Profiles(props) {
                 {props.data.map((userIndex)=>(
                     <div>
                     <Card style={{width: '18rem', margin: '2px'}}>
-                        <Card.Img style={{height: '150px'}} variant="top" src={userIndex.fields.profileImage.fields.url}/>
+                        <Card.Img style={{height: '150px'}} variant="top" src={`${userIndex.fields.profileImage.fields.file.url}`}/>
                         <Card.Body>
                             <Card.Title>{userIndex.fields.firstName} {userIndex.fields.lastName}</Card.Title>
                             <Card.Text>

@@ -19,7 +19,7 @@ export default function FilteredProfiles(props){
                             <Card.Text>
                                 {userIndex.fields.profileDescription}
                             </Card.Text>
-                          {userIndex.fields.skills_.map((r) => (<Badge className="m-2" variant="secondary"><Link className="text-white">{r}</Link></Badge>))}
+                          {userIndex.fields.skills_.map((r) => (<Badge className="m-2" variant="secondary"><Link className="text-white" >{r}</Link></Badge>))}
 
                           <br/>
                             <a href={`mailto:mail}?subject=Request a new employee`} target="_blank"
